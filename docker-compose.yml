@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssword2024
+      MYSQL_DATABASE: registraties
+      MYSQL_USER: root
+      MYSQL_PASSWORD: P@ssword2024
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:80808
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  db_data:
