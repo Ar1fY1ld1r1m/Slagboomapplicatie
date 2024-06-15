@@ -25,7 +25,7 @@ func main() {
 
 	err := database.Connect()
 	if err != nil {
-		log.Fatalf("Database is ontoegankelijk: %v", err)
+		log.Fatalf("database is ontoegankelijk: %v", err)
 	}
 
 	r := gin.Default()
@@ -34,7 +34,7 @@ func main() {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
 	r.GET("/check", func(c *gin.Context) {
-		kenteken := c.Query("kenteken")
+		kenteken := c.Query("licenseplate")
 		api.CheckKenteken(kenteken, c)
 	})
 

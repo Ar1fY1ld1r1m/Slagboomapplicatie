@@ -32,7 +32,7 @@ const docTemplate = `{
                     {
                         "type": "string",
                         "description": "Kenteken",
-                        "name": "kenteken",
+                        "name": "licenseplate",
                         "in": "query",
                         "required": true
                     }

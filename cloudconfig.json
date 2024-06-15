@@ -1,0 +1,7 @@
+{
+        "db_username": "dbadmin",
+        "db_password": "7KmNlp.s",
+        "db_host": "holidayparksmdb.mysql.database.azure.com",
+        "db_port": "3306",
+        "db_name": "holidayparks"
+}

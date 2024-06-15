@@ -17,7 +17,7 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "kenteken"
+      - name: "licenseplate"
         in: "query"
         required: true
         type: "string"

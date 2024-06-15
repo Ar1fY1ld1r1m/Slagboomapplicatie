@@ -1,6 +1,6 @@
 module slagboomapplicatie_code
 
-go 1.21.7
+go 1.16
 
 require (
 	github.com/gin-gonic/gin v1.10.0
@@ -8,6 +8,7 @@ require (
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
 	github.com/swaggo/swag v1.16.3
+	github.com/gorilla/mux v1.8.0
 )
 
 require (

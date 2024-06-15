@@ -20,14 +20,14 @@ import (
 func CheckKenteken(kenteken string, c *gin.Context) {
 	if kenteken == "" {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Geen kenteken opgegeven",
+			"error": "geen kenteken opgegeven",
 		})
 		return
 	}
 	found, voornaam, achternaam, telefoonnummer, err := database.CheckKentekenInDatabase(kenteken)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": "Fout bij het ophalen van het kenteken",
+			"error": "fout bij het ophalen van het kenteken",
 		})
 		return
 	}
