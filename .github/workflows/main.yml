@@ -28,7 +28,7 @@ jobs:
 
     - name: Push Docker image to Azure Container Registry
       run: |
-        docker tag slagboomapplicatie-api slagboomapplicatieregistry.azurecr.io/slagboomapplicatie:latest
+        docker tag slagboomapplicatie-api slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
         docker push slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
 
     - name: Deploy to Azure Container Apps (ACI)
