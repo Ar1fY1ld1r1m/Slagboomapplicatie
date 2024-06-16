@@ -42,7 +42,7 @@ jobs:
         docker tag slagboomapplicatie-api slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
         docker push slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
     - name: Deploy to Azure Container Apps (ACI)
-      run: az container create --resource-group opslag-rg --name slagboom-api-container --image slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080
+      run: az container create --resource-group opslag-rg --name slagboom-api-container --image slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080 --registry-name slagboomapplicatieregistry
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
