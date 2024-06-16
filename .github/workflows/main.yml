@@ -25,6 +25,7 @@ jobs:
         login-server: slagboomapplicatieregistry.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
+
     - name: Azure CLI login
       uses: azure/login@v1
       with:
@@ -38,11 +39,12 @@ jobs:
 
     - name: Push Docker image to Azure Container Registry
       run: |
-        docker build -t slagboomapplicatie-api .
-        docker tag slagboomapplicatie-api slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
+        docker tag slagboom-api slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
         docker push slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest
-    - name: Deploy to Azure Container Apps (ACI)
-      run: az container create --resource-group opslag-rg --name slagboom-api-container --image slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080
+
+    - name: Deploy to Azure Container Instances (ACI)
+      run: |
+        az container create --resource-group opslag-rg --name slagboom-api-container --image slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080 --registry-name slagboomapplicatieregistry
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
