@@ -1,6 +1,6 @@
 module slagboomapplicatie_code
 
-go 1.17
+go 1.22.4
 
 require (
 	github.com/gin-gonic/gin v1.10.0
