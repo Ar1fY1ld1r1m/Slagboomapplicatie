@@ -44,7 +44,7 @@ jobs:
 
     - name: Deploy to Azure Container Instances (ACI)
       run: |
-        az container create --resource-group opslag-rg --name slagboom-api-container --image ***.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080 --registry-username slagboomapplicatieregistry --registry-password MpLYNtvd+1sn05DGH78rGP05LR9UQrzBPbNEwAGGx2+ACRAbf3oN
+        az container create --resource-group opslag-rg --name slagboom-api-container --image slagboomapplicatieregistry.azurecr.io/slagboomapplicatie-api:latest --cpu 1 --memory 1 --ports 8080 --registry-username slagboomapplicatieregistry --registry-password MpLYNtvd+1sn05DGH78rGP05LR9UQrzBPbNEwAGGx2+ACRAbf3oN
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
