@@ -10,5 +10,5 @@ services:
       DB_HOST: host.docker.internal
       DB_PORT: 3306
       DB_USER: root
-      DB_PASSWORD: P@ssword2024
+      DB_PASSWORD: x1x1x1x
       DB_NAME: registraties
